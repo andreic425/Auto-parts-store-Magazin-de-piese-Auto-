@@ -1,7 +1,7 @@
 ﻿# Magazin de Piese Auto
 
-Aplicație web pentru consultarea și gestionarea catalogului unui magazin de piese auto. Fiecare piesă are o stare (nouă, recondiționată, second-hand), o categorie și este marcată ca disponibilă sau indisponibilă.
-Se adresează clienților care vor să caute și să cumpere piese auto printr-o platformă online simplă.
+A web application for browsing and managing an auto parts store's catalog. Each part has a condition (new, refurbished, or used) and a category, and is marked as either available or unavailable.
+It is designed for customers who wish to search for and purchase auto parts via an online platform.
 
 ## Data model
 
