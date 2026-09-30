@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magazin de Piese Auto - mockup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Magazin de Piese Auto</h1>
+    <p>Acest site WEB are scopul de a oferi utilizatorilor o platformă pentru căutarea și cumpărarea de piese auto.</p>
+    <p class="app-count">3 piese în total, dintre care 2 disponibile</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>Adaugă o piesă</h2>
+      
+      <form class="item-form">
+        <label>Denumire piesă
+          <input type="text" name="denumire" maxlength="100" placeholder="Ex: Plăcuțe de frână Bosch" required />
+        </label>
+        <label>Stare
+          <select name="stare">
+            <option value="noua">Nouă</option>
+            <option value="recond">Recondiționată</option>
+            <option value="second">Second-hand</option>
+          </select>
+        </label>
+        <button type="submit">Adaugă</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Piesele din magazin</h2>
+      <!-- Când lista e goală: <p class="empty">Nu există nicio piesă.</p> -->
+
+      <ul class="item-list">
+        <li class="item-card">
+          <div>
+            <h3>Plăcuțe de frână Bosch</h3>
+            <span class="badge badge-noua">Nouă</span>
+          </div>
+          <span class="status">Disponibilă</span>
+        </li>
+        <li class="item-card done">
+          <div>
+            <h3>Alternator Valeo</h3>
+            <span class="badge badge-recond">Recondiționată</span>
+          </div>
+          <span class="status">Indisponibilă</span>
+        </li>
+        <li class="item-card">
+          <div>
+            <h3>Oglindă retrovizoare stânga</h3>
+            <span class="badge badge-second">Second-hand</span>
+          </div>
+          <span class="status">Disponibilă</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="app-footer">Proiect Tehnologii Web</footer>
+</body>
+</html>
