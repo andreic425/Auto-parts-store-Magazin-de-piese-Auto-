@@ -1,4 +1,4 @@
-﻿# Magazin de Piese Auto
+﻿# Auto Parts Store
 
 A web application for browsing and managing an auto parts store's catalog. Each part has a condition (new, refurbished, or used) and a category, and is marked as either available or unavailable.
 It is designed for customers who wish to search for and purchase auto parts via an online platform.
@@ -27,9 +27,9 @@ Open `index.html` in a browser. No build step, no server.
 
 | Tool   | Used for                                                                                 |
 | ------ | ---------------------------------------------------------------------------------------- |
-| Claude | First version of the HTML/CSS and the README; explanation and review of my CSS (stage 1) |
+| Claude |  I used artificial intelligence to understand and use CSS files.                         |
 
-Details per stage: see the ai-log/ folder.
+
 
 ## Status
 
