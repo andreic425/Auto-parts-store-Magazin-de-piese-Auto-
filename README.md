@@ -27,14 +27,14 @@ Open `index.html` in a browser. No build step, no server.
 
 | Tool   | Used for                                                                                 |
 | ------ | ---------------------------------------------------------------------------------------- |
-| Claude |  I used artificial intelligence to understand and use CSS files.                         |
+| Claude | I used artificial intelligence to understand and use HTML, CSS and JavaScript (stages 1-2).                         |
 
 
 
 ## Status
-
 - [x] Stage 1: static mockup
-- [ ] Stage 2: data logic in JavaScript
+- [x] Stage 2: data logic in JavaScript
+- [ ] Stage 3: Vite and React project
 
 ## Stage 1 verification table
 
@@ -48,3 +48,9 @@ Open `index.html` in a browser. No build step, no server.
 | S1-R6 | 2 columns on desktop, 1 under 700px | [style.css](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-1/style.css#L36-L44) | resize < 700px |
 | S1-R7 | visible focus, readable dark theme | [style.css](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-1/style.css#L142-L158) | Tab; dark mode |
 | S1-R8 | commit "Stage 1" pushed | [commit history](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-1) | commit history |
+
+
+## Stage 2: data logic
+
+Plain JavaScript, no DOM. `piese.js` holds the array and the functions
+that read and change it. Results are printed in the browser console (F12).
