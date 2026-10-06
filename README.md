@@ -54,3 +54,15 @@ Open `index.html` in a browser. No build step, no server.
 
 Plain JavaScript, no DOM. `piese.js` holds the array and the functions
 that read and change it. Results are printed in the browser console (F12).
+
+## Stage 2 verification table
+
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S2-R1 | JS file linked, logs on page load | [index.html](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/951a53d64b7d69d66f511b50c2e41f397e38e632/index.html#L66) | open page, F12 |
+| S2-R2 | 3+ items with id, name, state, tag | [piese.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/951a53d64b7d69d66f511b50c2e41f397e38e632/piese.js#L1-L5) | read |
+| S2-R3 | list, count, search, add, toggle, delete | [piese.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/951a53d64b7d69d66f511b50c2e41f397e38e632/piese.js#L65-L79) | console output |
+| S2-R4 | add rejects empty name and invalid tag | [piese.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/951a53d64b7d69d66f511b50c2e41f397e38e632/piese.js#L26-L52) | last 2 console lines |
+| S2-R5 | original array unchanged after add | [piese.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/951a53d64b7d69d66f511b50c2e41f397e38e632/piese.js#L73) | console line |
+| S2-R6 | README Stage 2 section + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-2/README.md#stage-2-data-logic), [ai-log/etapa-02.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/HASH/ai-log/etapa-02.md) | read |
+| S2-R7 | commit "Stage 2" pushed | [commit history](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-2/) | commit history |
