@@ -95,10 +95,10 @@ npm run build
 
 | ID | Requirement | Where (permalink) | How to check |
 |----|-------------|-------------------|--------------|
-| S3-R1 | npm run dev starts without errors | [frontend/package.json](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/frontend/package.json) | npm install, npm run dev |
-| S3-R2 | app name and counter computed from data | [frontend/src/App.jsx#L..-L..](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/frontend/src/App.jsx#L..-L..) | edit data, save |
-| S3-R3 | data from README, not from the example | [frontend/src/App.jsx#L..-L..](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/frontend/src/App.jsx#L..-L..) | compare with README |
-| S3-R4 | stage 1 styles reused | [frontend/src/App.css](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/frontend/src/App.css) | look at the page |
-| S3-R5 | node_modules ignored, build passes | [frontend/.gitignore](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/frontend/.gitignore) | npm run build |
-| S3-R6 | README Stage 3 section + AI log | [README.md](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/README.md), [ai-log/etapa-03.md](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/ai-log/etapa-03.md) | read |
-| S3-R7 | commit "Stage 3" pushed | [commit](https://github.com/andreic425/Magazin-Piese-Auto/commit/<HASH>) | commit history |
+| S3-R1 | npm run dev starts without errors | [frontend/package.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-3/frontend/package.json) | npm install, npm run dev |
+| S3-R2 | app name and counter computed from data | [frontend/src/App.jsx#L..-L..](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/377df7387b47a5d24b4662ab968863a00a691bbe/frontend/src/App.jsx#L8-L20) | edit data, save |
+| S3-R3 | data from README, not from the example | [frontend/src/App.jsx#L..-L..](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/377df7387b47a5d24b4662ab968863a00a691bbe/frontend/src/App.jsx#L1-L5) | compare with README |
+| S3-R4 | stage 1 styles reused | [frontend/src/App.css](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-3/frontend/src/App.css) | look at the page |
+| S3-R5 | node_modules ignored, build passes | [frontend/.gitignore](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/377df7387b47a5d24b4662ab968863a00a691bbe/frontend/.gitignore#L10) | npm run build |
+| S3-R6 | README Stage 3 section + AI log | [README.md](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/README.md), [ai-log/etapa-03.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-3/ai-log/ai-log/etapa-03.md) | read |
+| S3-R7 | commit "Stage 3" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-2/) | commit history |git commit -m "Stage 3: add checklist permalinks"
