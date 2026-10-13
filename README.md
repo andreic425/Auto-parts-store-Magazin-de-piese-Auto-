@@ -66,3 +66,39 @@ that read and change it. Results are printed in the browser console (F12).
 | S2-R5 | original array unchanged after add | [piese.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/951a53d64b7d69d66f511b50c2e41f397e38e632/piese.js#L73) | console line |
 | S2-R6 | README Stage 2 section + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-2/README.md#stage-2-data-logic), [ai-log/etapa-02.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/HASH/ai-log/etapa-02.md) | read |
 | S2-R7 | commit "Stage 2" pushed | [commit history](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-2/) | commit history |
+
+
+## Stage 3: Vite and React project
+
+The app now lives in `frontend/`, built with Vite and React. The data from stage 2 (the `piese` array) moved into the main component, `App.jsx`. The header shows the total number of parts and the number of available parts, both computed from the data. The list is still printed raw (JSON); the components that draw the cards come in stage 4.
+
+The stage 1 mockup and the stage 2 script are kept in `mockup/`, outside the new project.
+
+## How to run
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Then open the address printed in the terminal (http://localhost:5173).
+
+To check that the project builds without errors:
+
+```bash
+cd frontend
+npm run build
+```
+
+## Stage 3 checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+|----|-------------|-------------------|--------------|
+| S3-R1 | npm run dev starts without errors | [frontend/package.json](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/frontend/package.json) | npm install, npm run dev |
+| S3-R2 | app name and counter computed from data | [frontend/src/App.jsx#L..-L..](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/frontend/src/App.jsx#L..-L..) | edit data, save |
+| S3-R3 | data from README, not from the example | [frontend/src/App.jsx#L..-L..](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/frontend/src/App.jsx#L..-L..) | compare with README |
+| S3-R4 | stage 1 styles reused | [frontend/src/App.css](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/frontend/src/App.css) | look at the page |
+| S3-R5 | node_modules ignored, build passes | [frontend/.gitignore](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/frontend/.gitignore) | npm run build |
+| S3-R6 | README Stage 3 section + AI log | [README.md](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/README.md), [ai-log/etapa-03.md](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/ai-log/etapa-03.md) | read |
+| S3-R7 | commit "Stage 3" pushed | [commit](https://github.com/andreic425/Magazin-Piese-Auto/commit/<HASH>) | commit history |
