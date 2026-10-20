@@ -114,3 +114,16 @@ an item (`disponibila`) changes the look of its card.
 
 Frontend styling and card images were added after Stage 4. The mockup in
 `mockup/` is unchanged.
+
+## Stage 4: checklist
+## Stage 4: checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+|----|-------------|-------------------|--------------|
+| S4-R1 | 2+ components in `src/components/` | [frontend/src/components/](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/tree/stage-4/frontend/src/components) | open folder |
+| S4-R2 | card receives data through props | [PiesaCard.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/fc496727a356e288f65461d86c913cd95dceac02/frontend/src/components/PiesaCard.jsx#L7-L29) | read |
+| S4-R3 | map + `key={id}`, no console warnings | [PiesaList.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/fc496727a356e288f65461d86c913cd95dceac02/frontend/src/components/PiesaList.jsx#L9-L13) | F12, Console |
+| S4-R4 | message for empty list | [PiesaList.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/fc496727a356e288f65461d86c913cd95dceac02/frontend/src/components/PiesaList.jsx#L4-L6) | set array to `[]` |
+| S4-R5 | state changes the card look | [PiesaCard.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/fc496727a356e288f65461d86c913cd95dceac02/frontend/src/components/PiesaCard.jsx#L8-L22) | toggle a done flag |
+| S4-R6 | README Stage 4 section + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-4/README.md), [ai-log/etapa-04.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-4/ai-log/etapa-04.md) | read |
+| S4-R7 | commit "Stage 4" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-4) | commit history |
