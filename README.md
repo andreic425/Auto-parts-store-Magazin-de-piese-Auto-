@@ -102,3 +102,15 @@ npm run build
 | S3-R5 | node_modules ignored, build passes | [frontend/.gitignore](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/377df7387b47a5d24b4662ab968863a00a691bbe/frontend/.gitignore#L10) | npm run build |
 | S3-R6 | README Stage 3 section + AI log | [README.md](https://github.com/andreic425/Magazin-Piese-Auto/blob/<HASH>/README.md), [ai-log/etapa-03.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-3/ai-log/ai-log/etapa-03.md) | read |
 | S3-R7 | commit "Stage 3" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-2/) | commit history |git commit -m "Stage 3: add checklist permalinks"
+
+## Stage 4: components
+
+The list is rendered from the data, through two components:
+- `PiesaList` receives the whole array and renders one card per item
+- `PiesaCard` receives a single item through props and displays it
+
+The empty list shows a message ("Nu există nicio piesă."), and the state of
+an item (`disponibila`) changes the look of its card.
+
+Frontend styling and card images were added after Stage 4. The mockup in
+`mockup/` is unchanged.

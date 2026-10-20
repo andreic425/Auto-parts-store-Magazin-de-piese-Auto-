@@ -1,7 +1,9 @@
+import PiesaList from "./components/PiesaList.jsx";
+
 const piese = [
-  { id: 1, denumire: "Plăcuțe de frână Bosch", disponibila: true, stare: "noua" },
-  { id: 2, denumire: "Alternator Valeo", disponibila: false, stare: "recond" },
-  { id: 3, denumire: "Oglindă retrovizoare stânga", disponibila: true, stare: "second" },
+  { id: 1, denumire: "Plăcuțe de frână Bosch", disponibila: true, stare: "noua", imagine: "/images/placute-frana.jpg" },
+  { id: 2, denumire: "Alternator Valeo", disponibila: false, stare: "recond", imagine: "/images/alternator.jpg" },
+  { id: 3, denumire: "Oglindă retrovizoare stânga", disponibila: true, stare: "second", imagine: "/images/oglinda.jpeg" },
 ];
 
 export default function App() {
@@ -23,7 +25,7 @@ export default function App() {
       <main className="container">
         <section className="panel">
           <h2>Piesele noastre</h2>
-          <pre>{JSON.stringify(piese, null, 2)}</pre>
+          <PiesaList piese={piese} />
         </section>
       </main>
     </>
