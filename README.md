@@ -34,7 +34,11 @@ Open `index.html` in a browser. No build step, no server.
 ## Status
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
-- [ ] Stage 3: Vite and React project
+- [x] Stage 3: Vite and React project
+## Status
+- [x] Stage 4: components rendered from data
+- [x] Stage 5: local state and events
+- [ ] Stage 6: loading data from a mock API
 
 ## Stage 1 verification table
 
@@ -144,4 +148,4 @@ header switches between light and dark mode. Changes are lost on refresh.
 | S5-R5 | immutable updates (no push, splice, assignment) | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L20-L28) | read |
 | S5-R6 | light / dark toggle: state + data-theme on html | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L10-L47), [App.css](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.css#L167-L193) | click the button, both system themes |
 | S5-R7 | no console warnings; README + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-5/README.md), [etapa-05.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-5/ai-log/etapa-05.md) | F12, Console |
-| S5-R8 | commit "Stage 5" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commit/8128aba6655cffd40bdc56d5b3450a82be0fc65c) | commit history |
+| S5-R8 | commit "Stage 5" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-5) | commit history |
