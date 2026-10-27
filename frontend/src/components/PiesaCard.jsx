@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const ETICHETE_STARE = {
   noua: "Nouă",
   recond: "Recondiționată",
@@ -5,6 +7,9 @@ const ETICHETE_STARE = {
 };
 
 export default function PiesaCard({ piesa, onToggle, onDelete }) {
+  // Stare locală pentru a ține minte dacă descrierea este deschisă sau închisă
+  const [deschis, setDeschis] = useState(false);
+
   return (
     <li className={piesa.disponibila ? "item-card" : "item-card done"}>
       {piesa.imagine && (
@@ -34,6 +39,16 @@ export default function PiesaCard({ piesa, onToggle, onDelete }) {
         <span className="status">
           {piesa.disponibila ? "Disponibilă" : "Indisponibilă"}
         </span>
+
+        {/* Butonul cu săgeată care comută starea la click */}
+        <button
+          type="button"
+          className="btn-detalii"
+          onClick={() => setDeschis(!deschis)}
+        >
+          Detalii {deschis ? "▲" : "▼"}
+        </button>
+
         <button
           className="btn-danger"
           onClick={() => onDelete(piesa.id)}
@@ -42,6 +57,13 @@ export default function PiesaCard({ piesa, onToggle, onDelete }) {
           Șterge
         </button>
       </div>
+
+      {/* Dacă 'deschis' este true, afișează descrierea luată direct din obiectul piesei */}
+      {deschis && (
+        <div className="descriere-box">
+          {piesa.descriere}
+        </div>
+      )}
     </li>
   );
 }

@@ -2,9 +2,30 @@ import { useState } from "react";
 import PiesaList from "./components/PiesaList.jsx";
 
 const PIESE_INITIALE = [
-  { id: 1, denumire: "Plăcuțe de frână Bosch", disponibila: true, stare: "noua", imagine: "/images/placute-frana.jpg" },
-  { id: 2, denumire: "Alternator Valeo", disponibila: false, stare: "recond", imagine: "/images/alternator.jpg" },
-  { id: 3, denumire: "Oglindă retrovizoare stânga", disponibila: true, stare: "second", imagine: "/images/oglinda.jpeg" },
+  {
+    id: 1,
+    denumire: "Plăcuțe de frână Bosch",
+    disponibila: true,
+    stare: "noua",
+    imagine: "/images/placute-frana.jpg",
+    descriere: "Set de plăcuțe de frână pentru puntea față, potrivit pentru Volkswagen Golf VII (2012-2020). Frânare silențioasă și uzură redusă.",
+  },
+  {
+    id: 2,
+    denumire: "Alternator Valeo",
+    disponibila: false,
+    stare: "recond",
+    imagine: "/images/alternator.jpg",
+    descriere: "Alternator recondiționat și testat, potrivit pentru Renault Megane III 1.5 dCi. Asigură încărcarea stabilă a bateriei.",
+  },
+  {
+    id: 3,
+    denumire: "Oglindă retrovizoare stânga",
+    disponibila: true,
+    stare: "second",
+    imagine: "/images/oglinda.jpeg",
+    descriere: "Oglindă stânga second-hand, compatibilă cu BMW Seria 1 (E81, E82, E87, E88) și BMW Seria 3 (E46, E90, E91, E92, E93).",
+  },
 ];
 
 function temaInitiala() {

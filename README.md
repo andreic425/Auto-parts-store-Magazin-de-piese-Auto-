@@ -35,7 +35,6 @@ Open `index.html` in a browser. No build step, no server.
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
 - [x] Stage 3: Vite and React project
-## Status
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
 - [ ] Stage 6: loading data from a mock API
