@@ -115,7 +115,7 @@ an item (`disponibila`) changes the look of its card.
 Frontend styling and card images were added after Stage 4. The mockup in
 `mockup/` is unchanged.
 
-## Stage 4: checklist
+
 ## Stage 4: checklist
 
 | ID | Requirement | Where (permalink) | How to check |

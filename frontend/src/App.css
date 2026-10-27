@@ -13,6 +13,8 @@
   --tag-noua: #15803d;
   --tag-recond: #b45309;
   --tag-second: #091950;
+  --danger: #b91c1c;
+  --header-overlay: linear-gradient(rgba(130, 130, 133, 0.75), rgba(185, 180, 180, 0.75));
 }
 
 body {
@@ -24,8 +26,9 @@ body {
 }
 
 .app-header {
+  position: relative;
   background:
-    linear-gradient(rgba(130, 130, 133, 0.75), rgba(185, 180, 180, 0.75)),
+    var(--header-overlay),
     url("/images/fundal.jpg") center / cover no-repeat;
   color: var(--on-accent);
   text-align: center;
@@ -86,7 +89,6 @@ body {
   cursor: pointer;
 }
 
-
 .item-list {
   list-style: none;
   padding: 0;
@@ -123,7 +125,6 @@ body {
 .badge-recond { background: var(--tag-recond); }
 .badge-second { background: var(--tag-second); }
 
-
 .item-img {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -131,7 +132,6 @@ body {
   background: #ffffff;
   border-radius: 8px;
 }
-
 
 .item-card.done h3 {
   text-decoration: line-through;
@@ -165,7 +165,7 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #121418;
     --card: #1f2227;
     --text: #e6e8eb;
@@ -174,9 +174,73 @@ body {
     --accent: #5470f0;
     --accent-dark: #3f58d0;
     --accent-soft: #1e2a4a;
+    --danger: #ef4444;
+    --header-overlay: linear-gradient(rgba(18, 20, 24, 0.82), rgba(31, 34, 39, 0.82));
   }
+}
+
+:root[data-theme="dark"] {
+  --bg: #121418;
+  --card: #1f2227;
+  --text: #e6e8eb;
+  --muted: #9aa1ab;
+  --border: #343a42;
+  --accent: #5470f0;
+  --accent-dark: #3f58d0;
+  --accent-soft: #1e2a4a;
+  --danger: #ef4444;
+  --header-overlay: linear-gradient(rgba(18, 20, 24, 0.82), rgba(31, 34, 39, 0.82));
 }
 
 @media (max-width: 700px) {
   .container { grid-template-columns: 1fr; }
 }
+
+.item-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.item-main input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn-danger {
+  border: 1px solid var(--danger);
+  background: transparent;
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn-danger:hover { background: var(--danger); color: #fff; }
+
+.theme-toggle {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover { background: rgba(255, 255, 255, 0.15); }

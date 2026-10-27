@@ -1,6 +1,6 @@
 import PiesaCard from "./PiesaCard.jsx";
 
-export default function PiesaList({ piese }) {
+export default function PiesaList({ piese, onToggle, onDelete }) {
   if (piese.length === 0) {
     return <p className="empty">Nu există nicio piesă.</p>;
   }
@@ -8,7 +8,12 @@ export default function PiesaList({ piese }) {
   return (
     <ul className="item-list">
       {piese.map((piesa) => (
-        <PiesaCard key={piesa.id} piesa={piesa} />
+        <PiesaCard
+          key={piesa.id}
+          piesa={piesa}
+          onToggle={onToggle}
+          onDelete={onDelete}
+        />
       ))}
     </ul>
   );
