@@ -127,3 +127,21 @@ Frontend styling and card images were added after Stage 4. The mockup in
 | S4-R5 | state changes the card look | [PiesaCard.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/fc496727a356e288f65461d86c913cd95dceac02/frontend/src/components/PiesaCard.jsx#L8-L22) | toggle a done flag |
 | S4-R6 | README Stage 4 section + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-4/README.md), [ai-log/etapa-04.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-4/ai-log/etapa-04.md) | read |
 | S4-R7 | commit "Stage 4" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-4) | commit history |
+
+## Stage 5: local state and events
+The parts list lives in React state. Checking and deleting work from the page,
+and the counters in the header follow automatically. A button in the
+header switches between light and dark mode. Changes are lost on refresh.
+
+## Stage 5: checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+|---|---|---|---|
+| S5-R1 | list kept in useState, in App | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L17) | read |
+| S5-R2 | toggling changes state and card look | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L20-L24), [PiesaCard.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/components/PiesaCard.jsx#L9-L24) | click a checkbox |
+| S5-R3 | delete removes the item | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L26-L28), [PiesaCard.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/components/PiesaCard.jsx#L37-L43) | click Delete |
+| S5-R4 | header counter derived, not in state | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L36) | toggle, watch header |
+| S5-R5 | immutable updates (no push, splice, assignment) | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L20-L28) | read |
+| S5-R6 | light / dark toggle: state + data-theme on html | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L10-L47), [App.css](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.css#L167-L193) | click the button, both system themes |
+| S5-R7 | no console warnings; README + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-5/README.md), [etapa-05.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-5/ai-log/etapa-05.md) | F12, Console |
+| S5-R8 | commit "Stage 5" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commit/8128aba6655cffd40bdc56d5b3450a82be0fc65c) | commit history |
