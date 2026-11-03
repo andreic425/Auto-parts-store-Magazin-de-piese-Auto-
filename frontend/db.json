@@ -1,0 +1,44 @@
+{
+  "piese": [
+    {
+      "id": 1,
+      "denumire": "Plăcuțe de frână Bosch",
+      "disponibila": true,
+      "stare": "noua",
+      "imagine": "/images/placute-frana.jpg",
+      "descriere": "Siguranță maximă pe șosea! Set premium Bosch pentru puntea față, compatibil VW Golf VII (2012-2020).\nBucură-te de o frânare absolut silențioasă, răspuns prompt la pedală și durabilitate extinsă cu uzură redusă.\nCalitate germană la super preț!"
+    },
+    {
+      "id": 2,
+      "denumire": "Alternator Valeo",
+      "disponibila": false,
+      "stare": "recond",
+      "imagine": "/images/alternator.jpg",
+      "descriere": "Performanță ca în prima zi! Alternator original Valeo, recondiționat profesional și testat riguros pe stand.\nSpecial conceput pentru Renault Megane III 1.5 dCi. Asigură o încărcare perfect stabilă a bateriei și protejează întreaga instalație electrică."
+    },
+    {
+      "id": 3,
+      "denumire": "Oglindă retrovizoare stânga",
+      "disponibila": true,
+      "stare": "second",
+      "imagine": "/images/oglinda.jpeg",
+      "descriere": "Vizibilitate impecabilă fără compromisuri! Oglindă stânga originală în stare excelență, compatibilă cu gama BMW Seria 1 (E81-E88) și Seria 3 (E46-E93). Montaj rapid, reglaj perfect și aspect exterior îngrijit. O alegere inteligentă!"
+    },
+    {
+      "id": 4,
+      "denumire": "Filtru de ulei Mann",
+      "disponibila": true,
+      "stare": "noua",
+      "imagine": "/images/filtru.jpeg",
+      "descriere": "Filtru de ulei Mann-Filter de înaltă eficiență, conceput pentru reținerea optimă a impurităților din uleiul de motor. Asigură protecție avansată a pieselor în mișcare și menține performanțele optime ale motorului între schimburile de ulei."
+    },
+    {
+      "id": 5,
+      "denumire": "Far dreapta VW Golf",
+      "disponibila": false,
+      "stare": "second",
+      "imagine": "/images/far.jpeg",
+      "descriere": "Far original pentru partea dreaptă, compatibil cu modelul VW Golf. Stare bună de funcționare, cu dispersor clar și prinderi intacte, ideal pentru înlocuirea unei componente deteriorate."
+    }
+  ]
+}

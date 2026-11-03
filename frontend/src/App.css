@@ -15,6 +15,8 @@
   --tag-second: #091950;
   --danger: #b91c1c;
   --header-overlay: linear-gradient(rgba(130, 130, 133, 0.75), rgba(185, 180, 180, 0.75));
+  --error-bg: #fef2f2;
+  --error-border: #fecaca;
 }
 
 body {
@@ -176,6 +178,8 @@ body {
     --accent-soft: #1e2a4a;
     --danger: #ef4444;
     --header-overlay: linear-gradient(rgba(18, 20, 24, 0.82), rgba(31, 34, 39, 0.82));
+    --error-bg: #3b1d1d;
+    --error-border: #6b2a2a;
   }
 }
 
@@ -190,6 +194,8 @@ body {
   --accent-soft: #1e2a4a;
   --danger: #ef4444;
   --header-overlay: linear-gradient(rgba(18, 20, 24, 0.82), rgba(31, 34, 39, 0.82));
+  --error-bg: #3b1d1d;
+  --error-border: #6b2a2a;
 }
 
 @media (max-width: 700px) {
@@ -261,14 +267,27 @@ body {
 }
 
 .descriere-box {
-  background: var(--card); 
-  color: var(--text);      
+  background: var(--card);
+  color: var(--text);
   font-size: 0.85rem;
-  padding: 10px;
+  line-height: 1.5;
+  padding: 12px 14px;
   border-radius: 8px;
   border: 1px solid var(--border);
   margin-top: 8px;
-  display: block !important; 
-  visibility: visible !important;
-  opacity: 1 !important;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.info { color: var(--muted); }
+
+.error {
+  color: var(--danger);
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  border-radius: 8px;
+  padding: 10px 12px;
 }

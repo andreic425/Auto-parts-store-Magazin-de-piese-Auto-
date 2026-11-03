@@ -1,32 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PiesaList from "./components/PiesaList.jsx";
-
-const PIESE_INITIALE = [
-  {
-    id: 1,
-    denumire: "Plăcuțe de frână Bosch",
-    disponibila: true,
-    stare: "noua",
-    imagine: "/images/placute-frana.jpg",
-    descriere: "Set de plăcuțe de frână pentru puntea față, potrivit pentru Volkswagen Golf VII (2012-2020). Frânare silențioasă și uzură redusă.",
-  },
-  {
-    id: 2,
-    denumire: "Alternator Valeo",
-    disponibila: false,
-    stare: "recond",
-    imagine: "/images/alternator.jpg",
-    descriere: "Alternator recondiționat și testat, potrivit pentru Renault Megane III 1.5 dCi. Asigură încărcarea stabilă a bateriei.",
-  },
-  {
-    id: 3,
-    denumire: "Oglindă retrovizoare stânga",
-    disponibila: true,
-    stare: "second",
-    imagine: "/images/oglinda.jpeg",
-    descriere: "Oglindă stânga second-hand, compatibilă cu BMW Seria 1 (E81, E82, E87, E88) și BMW Seria 3 (E46, E90, E91, E92, E93).",
-  },
-];
+import { fetchPiese } from "./api.js";
 
 function temaInitiala() {
   return window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -35,8 +9,31 @@ function temaInitiala() {
 }
 
 export default function App() {
-  const [piese, setPiese] = useState(PIESE_INITIALE);
+  const [piese, setPiese] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [tema, setTema] = useState(temaInitiala);
+
+  useEffect(() => {
+    let ignore = false;
+
+    async function load() {
+      try {
+        const data = await fetchPiese();
+        if (!ignore) setPiese(data);
+      } catch (err) {
+        if (!ignore) setError(err.message);
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    }
+
+    load();
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   function handleToggleDisponibila(id) {
     setPiese((prev) =>
@@ -64,7 +61,7 @@ export default function App() {
           onClick={handleTema}
           aria-pressed={tema === "dark"}
         >
-          {tema === "dark" ? "Light ON" : "Dark ON"}
+          {tema === "dark" ? "Mod luminos" : "Mod întunecat"}
         </button>
         <h1>Magazin de Piese Auto</h1>
         <p>
@@ -79,11 +76,23 @@ export default function App() {
       <main className="container">
         <section className="panel">
           <h2>Piesele noastre</h2>
-          <PiesaList
-            piese={piese}
-            onToggle={handleToggleDisponibila}
-            onDelete={handleDelete}
-          />
+
+          {loading && <p className="info">Se încarcă piesele...</p>}
+
+          {error && (
+            <p className="error">
+              Nu am putut încărca datele: {error}. Rulează{" "}
+              <code>npm run api</code>?
+            </p>
+          )}
+
+          {!loading && !error && (
+            <PiesaList
+              piese={piese}
+              onToggle={handleToggleDisponibila}
+              onDelete={handleDelete}
+            />
+          )}
         </section>
       </main>
     </>
