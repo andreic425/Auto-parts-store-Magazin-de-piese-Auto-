@@ -167,3 +167,16 @@ npm run api
 
 # Terminal 2: Start the React application (Vite dev server)
 npm run dev
+
+## Stage 6: checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+|---|---|---|---|
+| S6-R1 | mock API setup (json-server, db.json schema update) | [db.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/db.json), [package.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/package.json) | run json-server on port 3001 |
+| S6-R2 | API service module created | [api.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/api.js) | read file |
+| S6-R3 | asynchronous fetch on mount using useEffect | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.jsx) | inspect useEffect hook |
+| S6-R4 | loading state implementation | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.jsx) | check loading UI indicator |
+| S6-R5 | error state & user feedback handling | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.jsx), [App.css](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.css) | stop json-server, refresh app |
+| S6-R6 | clean git tracking (node_modules excluded via .gitignore) | [.gitignore](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/.gitignore) | check root repository files |
+| S6-R7 | updated README checklist & AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/README.md), [etapa-06.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/ai-log/etapa-06.md) | read files |
+| S6-R8 | commit "Stage 6" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-6) | check commit history |

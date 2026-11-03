@@ -3,8 +3,6 @@
 ## Tools
 - Claude (claude.ai)
 
-## Conversations
-- <link-ul conversației tale de pe claude.ai/share>  (understanding how buttons and onClick work in React)
 
 ## Key requests
 ### 1. How buttons and onClick work
