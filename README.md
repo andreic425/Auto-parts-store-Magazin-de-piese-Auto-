@@ -137,15 +137,41 @@ Frontend styling and card images were added after Stage 4. The mockup in
 The parts list lives in React state. Checking and deleting work from the page,
 and the counters in the header follow automatically. A button in the
 header switches between light and dark mode. Changes are lost on refresh.
+
+## Stage 5: checklist
+
+
+
+| ID | Requirement | Where (permalink) | How to check |
+
+|---|---|---|---|
+
+| S5-R1 | list kept in useState, in App | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L17) | read |
+
+| S5-R2 | toggling changes state and card look | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L20-L24), [PiesaCard.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/components/PiesaCard.jsx#L9-L24) | click a checkbox |
+
+| S5-R3 | delete removes the item | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L26-L28), [PiesaCard.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/components/PiesaCard.jsx#L37-L43) | click Delete |
+
+| S5-R4 | header counter derived, not in state | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L36) | toggle, watch header |
+
+| S5-R5 | immutable updates (no push, splice, assignment) | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L20-L28) | read |
+
+| S5-R6 | light / dark toggle: state + data-theme on html | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.jsx#L10-L47), [App.css](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/8128aba6655cffd40bdc56d5b3450a82be0fc65c/frontend/src/App.css#L167-L193) | click the button, both system themes |
+
+| S5-R7 | no console warnings; README + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-5/README.md), [etapa-05.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-5/ai-log/etapa-05.md) | F12, Console |
+
+| S5-R8 | commit "Stage 5" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-5) | commit history |
+
+
 ## Stage 6: checklist
 
 | ID | Requirement | Where (permalink) | How to check |
 |---|---|---|---|
-| S6-R1 | mock API setup (json-server, db.json schema update) | [db.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/db.json), [package.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/package.json) | run json-server on port 3001 |
-| S6-R2 | API service module created | [api.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/api.js) | read file |
-| S6-R3 | asynchronous fetch on mount using useEffect | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.jsx) | inspect useEffect hook |
-| S6-R4 | loading state implementation | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.jsx) | check loading UI indicator |
-| S6-R5 | error state & user feedback handling | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.jsx), [App.css](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.css) | stop json-server, refresh app |
+| S6-R1 | mock API setup (json-server, db.json schema update) | [package.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/package.json#L9), [db.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/db.json) | run json-server on port 3001 |
+| S6-R2 | API service module created | [api.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/api.js#L1-L9) | read file |
+| S6-R3 | asynchronous fetch on mount using useEffect | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.jsx#L17-L35) | inspect useEffect hook |
+| S6-R4 | loading state implementation | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.jsx#L12), [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.jsx#L69) | check loading UI indicator |
+| S6-R5 | error state & user feedback handling | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.jsx#L71-L76), [App.css](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/frontend/src/App.css#L226-L231) | stop json-server, refresh app |
 | S6-R6 | clean git tracking (node_modules excluded via .gitignore) | [.gitignore](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/.gitignore) | check root repository files |
 | S6-R7 | updated README checklist & AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/README.md), [etapa-06.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/ai-log/etapa-06.md) | read files |
 | S6-R8 | commit "Stage 6" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-6) | check commit history |
