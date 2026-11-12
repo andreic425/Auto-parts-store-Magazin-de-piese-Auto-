@@ -1,0 +1,6 @@
+{
+  "resource": "piese",
+  "title": "denumire",
+  "done": "disponibila",
+  "sample": { "stare": "second", "descriere": "Piesă de test" }
+}

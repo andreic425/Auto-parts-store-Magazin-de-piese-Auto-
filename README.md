@@ -38,7 +38,8 @@ Open `index.html` in a browser. No build step, no server.
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
 - [x] Stage 6: loading data from a mock API
-- [ ] Stage 7: form and validation
+- [x] Stage 7: form and validation
+- [ ] Stage 8: routing and detail page
 
 
 ## Stage 1 verification table
@@ -151,6 +152,9 @@ header switches between light and dark mode. Changes are lost on refresh.
 | S5-R7 | no console warnings; README + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-5/README.md), [etapa-05.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-5/ai-log/etapa-05.md) | F12, Console |
 | S5-R8 | commit "Stage 5" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-5) | commit history |
 
+## Stage 6: Data from a Mock API
+The parts list is fetched asynchronously from a local REST API (`json-server`) using `fetch` inside a `useEffect` hook. Loading and error states are handled directly in the UI (e.g., displaying feedback if the server is offline). Checking and deleting parts update local state, while the repository clean git tracking excludes `node_modules` via `.gitignore`.
+
 
 ## Stage 6: checklist
 
@@ -164,3 +168,11 @@ header switches between light and dark mode. Changes are lost on refresh.
 | S6-R6 | clean git tracking (node_modules excluded via .gitignore) | [.gitignore](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/.gitignore) | check root repository files |
 | S6-R7 | updated README checklist & AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/README.md), [etapa-06.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/ai-log/etapa-06.md) | read files |
 | S6-R8 | commit "Stage 6" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-6) | check commit history |
+
+## Stage 7: form and validation
+
+Parts can be added from the page, without editing `db.json` by hand. The form (`PiesaForm`) is controlled: every field has `value` and `onChange`. It validates the data before sending (name required, name max 100 characters, description max 500 characters) and shows the error next to the form, not with `alert`.
+
+All requests go through one shared `request` function in `api.js` (POST, PATCH, DELETE). The list is updated only after the server confirms the change, with the object returned by the server, so the new id comes from `json-server`. Toggling availability and deleting also go to the server, so every change survives a page refresh. While a part is being saved the button is disabled, and the form is cleared only if the save succeeded; if the API is offline, the error is shown and the typed text stays in the fields.
+
+For the automatic checks, `tw.json` in the repository root points to the `piese` resource, the title field (`denumire`) and the state field (`disponibila`), and the elements involved carry `data-testid` attributes.

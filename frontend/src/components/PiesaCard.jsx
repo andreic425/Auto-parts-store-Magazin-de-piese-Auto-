@@ -7,11 +7,14 @@ const ETICHETE_STARE = {
 };
 
 export default function PiesaCard({ piesa, onToggle, onDelete }) {
-  // Stare locală pentru a ține minte dacă descrierea este deschisă sau închisă
   const [deschis, setDeschis] = useState(false);
 
   return (
-    <li className={piesa.disponibila ? "item-card" : "item-card done"}>
+    <li
+      className={piesa.disponibila ? "item-card" : "item-card done"}
+      data-testid="item"
+      data-id={piesa.id}
+    >
       {piesa.imagine && (
         <img
           className="item-img"
@@ -26,9 +29,10 @@ export default function PiesaCard({ piesa, onToggle, onDelete }) {
           type="checkbox"
           checked={piesa.disponibila}
           onChange={() => onToggle(piesa.id)}
+          data-testid="item-toggle"
         />
         <div>
-          <h3>{piesa.denumire}</h3>
+          <h3 data-testid="item-title">{piesa.denumire}</h3>
           <span className={`badge badge-${piesa.stare}`}>
             {ETICHETE_STARE[piesa.stare]}
           </span>
@@ -40,7 +44,6 @@ export default function PiesaCard({ piesa, onToggle, onDelete }) {
           {piesa.disponibila ? "Disponibilă" : "Indisponibilă"}
         </span>
 
-        {/* Butonul cu săgeată care comută starea la click */}
         <button
           type="button"
           className="btn-detalii"
@@ -53,17 +56,13 @@ export default function PiesaCard({ piesa, onToggle, onDelete }) {
           className="btn-danger"
           onClick={() => onDelete(piesa.id)}
           aria-label={`Șterge ${piesa.denumire}`}
+          data-testid="item-delete"
         >
           Șterge
         </button>
       </div>
 
-      {/* Dacă 'deschis' este true, afișează descrierea luată direct din obiectul piesei */}
-      {deschis && (
-        <div className="descriere-box">
-          {piesa.descriere}
-        </div>
-      )}
+      {deschis && <div className="descriere-box">{piesa.descriere}</div>}
     </li>
   );
 }

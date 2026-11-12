@@ -35,7 +35,7 @@
     {
       "id": 5,
       "denumire": "Far dreapta VW Golf",
-      "disponibila": false,
+      "disponibila": true,
       "stare": "second",
       "imagine": "/images/far.jpeg",
       "descriere": "Far original pentru partea dreaptă, compatibil cu modelul VW Golf. Stare bună de funcționare, cu dispersor clar și prinderi intacte, ideal pentru înlocuirea unei componente deteriorate."
