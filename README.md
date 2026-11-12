@@ -169,10 +169,24 @@ The parts list is fetched asynchronously from a local REST API (`json-server`) u
 | S6-R7 | updated README checklist & AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/README.md), [etapa-06.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-6/ai-log/etapa-06.md) | read files |
 | S6-R8 | commit "Stage 6" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-6) | check commit history |
 
+
 ## Stage 7: form and validation
 
-Parts can be added from the page, without editing `db.json` by hand. The form (`PiesaForm`) is controlled: every field has `value` and `onChange`. It validates the data before sending (name required, name max 100 characters, description max 500 characters) and shows the error next to the form, not with `alert`.
+Parts can be added from the page through a controlled form (`PiesaForm`). The form validates the data (name required, max 100 characters; description max 500) and shows errors next to the fields, not with `alert`.
 
-All requests go through one shared `request` function in `api.js` (POST, PATCH, DELETE). The list is updated only after the server confirms the change, with the object returned by the server, so the new id comes from `json-server`. Toggling availability and deleting also go to the server, so every change survives a page refresh. While a part is being saved the button is disabled, and the form is cleared only if the save succeeded; if the API is offline, the error is shown and the typed text stays in the fields.
+All requests go through one shared `request` function in `api.js`. Adding, toggling and deleting are sent to the API first, and the list is updated with the object returned by the server, so every change survives a refresh. The button is disabled while saving, and the form is cleared only if the save succeeded.
 
-For the automatic checks, `tw.json` in the repository root points to the `piese` resource, the title field (`denumire`) and the state field (`disponibila`), and the elements involved carry `data-testid` attributes.
+`tw.json` and the `data-testid` attributes are used by the automatic checks.
+
+## Stage 7: checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+|---|---|---|---|
+| S7-R1 | controlled form: value + onChange on every field | [PiesaForm.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/93f10e350b2c6b064a0995c892d46913c06518dc/frontend/src/components/PiesaForm.jsx#L66-L103) | read |
+| S7-R2 | empty name shows an error, nothing is sent | [PiesaForm.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/93f10e350b2c6b064a0995c892d46913c06518dc/frontend/src/components/PiesaForm.jsx#L20-L37) | submit empty, watch Network |
+| S7-R3 | added item shows in the list and survives refresh | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/93f10e350b2c6b064a0995c892d46913c06518dc/frontend/src/App.jsx#L39-L42) (handleAdd), [api.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/93f10e350b2c6b064a0995c892d46913c06518dc/frontend/src/api.js#L18-L20) | add, refresh |
+| S7-R4 | toggle and delete survive refresh | [App.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/93f10e350b2c6b064a0995c892d46913c06518dc/frontend/src/App.jsx#L44-L63) | toggle/delete, refresh |
+| S7-R5 | button disabled while sending, form cleared only on success | [PiesaForm.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/93f10e350b2c6b064a0995c892d46913c06518dc/frontend/src/components/PiesaForm.jsx#L39-L57)  [PiesaForm.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/93f10e350b2c6b064a0995c892d46913c06518dc/frontend/src/components/PiesaForm.jsx#L111-L113) | --delay 3000; stop API and submit |
+| S7-R6 | tw.json and the data-testid attributes from table 7.3 | [tw.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-7/tw.json), [PiesaCard.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/93f10e350b2c6b064a0995c892d46913c06518dc/frontend/src/components/PiesaCard.jsx#L13-L66) | querySelectorAll in the console |
+| S7-R7 | README Stage 7 section + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-7/README.md), [etapa-07.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-7/ai-log/etapa-07.md) | read |
+| S7-R8 | commit "Stage 7" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-7) | commit history |
