@@ -1,0 +1,68 @@
+.header {
+  position: relative;
+  background:
+    var(--header-overlay),
+    url("/images/fundal.jpg") center / cover no-repeat;
+  color: var(--on-accent);
+  text-align: center;
+  padding: 48px 16px 24px;
+}
+
+.header h1 { margin: 0 0 4px; }
+.header p { margin: 4px 0; }
+
+.themeToggle {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.themeToggle:hover { background: rgba(255, 255, 255, 0.15); }
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  opacity: 0.85;
+}
+
+.link:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.active {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}
+
+.main {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 24px 16px 40px;
+}

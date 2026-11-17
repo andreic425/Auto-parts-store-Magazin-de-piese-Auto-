@@ -39,8 +39,8 @@ Open `index.html` in a browser. No build step, no server.
 - [x] Stage 5: local state and events
 - [x] Stage 6: loading data from a mock API
 - [x] Stage 7: form and validation
-- [ ] Stage 8: routing and detail page
-
+- [x] Stage 8: routing and detail page
+- [ ] Stage 9: own backend with Express
 
 ## Stage 1 verification table
 
@@ -190,3 +190,13 @@ All requests go through one shared `request` function in `api.js`. Adding, toggl
 | S7-R6 | tw.json and the data-testid attributes from table 7.3 | [tw.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-7/tw.json), [PiesaCard.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/93f10e350b2c6b064a0995c892d46913c06518dc/frontend/src/components/PiesaCard.jsx#L13-L66) | querySelectorAll in the console |
 | S7-R7 | README Stage 7 section + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-7/README.md), [etapa-07.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-7/ai-log/etapa-07.md) | read |
 | S7-R8 | commit "Stage 7" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-7) | commit history |
+
+## Stage 8: routing and detail page
+
+Four pages behind React Router: the parts list (`/`), a detail page at
+`/piese/:id`, an about page (`/despre`), and a 404 page. A shared layout
+(header, navigation, footer) wraps every page through `<Outlet />`, and the
+active link is marked by `NavLink`. The detail page reads the id with
+`useParams` and fetches only that part from the API; a missing id shows an
+error message with a link back to the list. Component styles moved to CSS
+Modules, next to each component.

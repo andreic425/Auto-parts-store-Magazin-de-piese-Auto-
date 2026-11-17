@@ -35,10 +35,18 @@
     {
       "id": 5,
       "denumire": "Far dreapta VW Golf",
-      "disponibila": true,
+      "disponibila": false,
       "stare": "second",
       "imagine": "/images/far.jpeg",
       "descriere": "Far original pentru partea dreaptă, compatibil cu modelul VW Golf. Stare bună de funcționare, cu dispersor clar și prinderi intacte, ideal pentru înlocuirea unei componente deteriorate."
+    },
+    {
+      "denumire": "Ulei de motor",
+      "stare": "noua",
+      "descriere": "Ulei Dacia Sandero motor 1.0",
+      "imagine": "/images/default.jpg",
+      "disponibila": true,
+      "id": 6
     }
   ]
 }

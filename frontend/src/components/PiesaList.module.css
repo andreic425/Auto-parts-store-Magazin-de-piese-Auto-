@@ -1,0 +1,14 @@
+.list {
+  list-style: none;
+  padding: 0 0 12px;
+  margin: 0;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+}
+
+.list > li {
+  flex: 0 0 260px;
+  scroll-snap-align: start;
+}

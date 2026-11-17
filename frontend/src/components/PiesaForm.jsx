@@ -1,10 +1,7 @@
 import { useState } from "react";
+import { STARI } from "../constants.js"; // NOU
+import styles from "./PiesaForm.module.css"; // NOU
 
-const STARI = [
-  { value: "noua", label: "Nouă" },
-  { value: "recond", label: "Recondiționată" },
-  { value: "second", label: "Second-hand" },
-];
 
 const DENUMIRE_MAX = 100;
 const DESCRIERE_MAX = 500;
@@ -58,7 +55,7 @@ export default function PiesaForm({ onAdd }) {
 
   return (
     <form
-      className="item-form"
+      className={styles.form} // MODIFICAT (era "item-form")
       onSubmit={handleSubmit}
       noValidate
       data-testid="form"
@@ -108,7 +105,12 @@ export default function PiesaForm({ onAdd }) {
         </p>
       )}
 
-      <button type="submit" disabled={trimite} data-testid="form-submit">
+      <button
+        type="submit"
+        className={styles.submit} // NOU
+        disabled={trimite}
+        data-testid="form-submit"
+      >
         {trimite ? "Se salvează..." : "Adaugă piesa"}
       </button>
     </form>

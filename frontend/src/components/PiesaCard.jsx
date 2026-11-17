@@ -1,52 +1,58 @@
 import { useState } from "react";
-
-const ETICHETE_STARE = {
-  noua: "Nouă",
-  recond: "Recondiționată",
-  second: "Second-hand",
-};
+import { Link } from "react-router-dom";
+import { ETICHETE_STARE } from "../constants.js";
+import styles from "./PiesaCard.module.css";
 
 export default function PiesaCard({ piesa, onToggle, onDelete }) {
   const [deschis, setDeschis] = useState(false);
 
   return (
     <li
-      className={piesa.disponibila ? "item-card" : "item-card done"}
+      className={
+        piesa.disponibila ? styles.card : `${styles.card} ${styles.done}`
+      }
       data-testid="item"
       data-id={piesa.id}
     >
       {piesa.imagine && (
         <img
-          className="item-img"
+          className={styles.img}
           src={piesa.imagine}
           alt={piesa.denumire}
           loading="lazy"
         />
       )}
 
-      <label className="item-main">
+      <div className={styles.main}>
         <input
           type="checkbox"
           checked={piesa.disponibila}
           onChange={() => onToggle(piesa.id)}
+          aria-label={`Marchează ${piesa.denumire}`}
           data-testid="item-toggle"
         />
         <div>
-          <h3 data-testid="item-title">{piesa.denumire}</h3>
+          <Link
+            to={`/piese/${piesa.id}`}
+            className={styles.title}
+            data-testid="item-link"
+          >
+            {piesa.denumire}
+          </Link>
           <span className={`badge badge-${piesa.stare}`}>
             {ETICHETE_STARE[piesa.stare]}
           </span>
         </div>
-      </label>
+      </div>
 
-      <div className="item-actions">
-        <span className="status">
+      <div className={styles.actions}>
+        <span className={styles.status}>
           {piesa.disponibila ? "Disponibilă" : "Indisponibilă"}
         </span>
 
         <button
           type="button"
-          className="btn-detalii"
+          className={styles.detalii}
           onClick={() => setDeschis(!deschis)}
         >
           Detalii {deschis ? "▲" : "▼"}
@@ -62,7 +68,7 @@ export default function PiesaCard({ piesa, onToggle, onDelete }) {
         </button>
       </div>
 
-      {deschis && <div className="descriere-box">{piesa.descriere}</div>}
+      {deschis && <div className={styles.descriere}>{piesa.descriere}</div>}
     </li>
   );
 }
