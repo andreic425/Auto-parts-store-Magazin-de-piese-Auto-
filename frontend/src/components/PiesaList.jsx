@@ -1,7 +1,7 @@
 import PiesaCard from "./PiesaCard.jsx";
 import styles from "./PiesaList.module.css";
 
-export default function PiesaList({ piese, onToggle, onDelete }) {
+export default function PiesaList({ piese, onToggle, onDelete, onBuy }) {
   if (piese.length === 0) {
     return (
       <p className="empty" data-testid="empty">
@@ -18,6 +18,7 @@ export default function PiesaList({ piese, onToggle, onDelete }) {
           piesa={piesa}
           onToggle={onToggle}
           onDelete={onDelete}
+          onBuy={onBuy}
         />
       ))}
     </ul>

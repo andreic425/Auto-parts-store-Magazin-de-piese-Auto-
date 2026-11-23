@@ -1,16 +1,19 @@
 import { useState } from "react";
-import { STARI } from "../constants.js"; // NOU
-import styles from "./PiesaForm.module.css"; // NOU
-
+import { STARI } from "../constants.js";
+import styles from "./PiesaForm.module.css";
 
 const DENUMIRE_MAX = 100;
 const DESCRIERE_MAX = 500;
 const IMAGINE_IMPLICITA = "/images/default.jpg";
+const PRET_IMPLICIT = "100";
+const STOC_IMPLICIT = "10";
 
 export default function PiesaForm({ onAdd }) {
   const [denumire, setDenumire] = useState("");
   const [stare, setStare] = useState("noua");
   const [descriere, setDescriere] = useState("");
+  const [pret, setPret] = useState(PRET_IMPLICIT);
+  const [stoc, setStoc] = useState(STOC_IMPLICIT);
   const [eroare, setEroare] = useState("");
   const [trimite, setTrimite] = useState(false);
 
@@ -21,6 +24,12 @@ export default function PiesaForm({ onAdd }) {
       return `Denumirea are maximum ${DENUMIRE_MAX} de caractere.`;
     if (descriere.trim().length > DESCRIERE_MAX)
       return `Descrierea are maximum ${DESCRIERE_MAX} de caractere.`;
+    const p = Number(pret);
+    if (pret.trim() === "" || Number.isNaN(p) || p <= 0)
+      return "Prețul trebuie să fie un număr mai mare decât 0.";
+    const s = Number(stoc);
+    if (stoc.trim() === "" || !Number.isInteger(s) || s < 0)
+      return "Stocul trebuie să fie un număr întreg, cel puțin 0.";
     return "";
   }
 
@@ -36,16 +45,20 @@ export default function PiesaForm({ onAdd }) {
     setEroare("");
     setTrimite(true);
     try {
-           await onAdd({
+      await onAdd({
         denumire: denumire.trim(),
         stare,
         descriere: descriere.trim(),
         imagine: IMAGINE_IMPLICITA,
-        disponibila: true,
+        pret: Number(pret),
+        stoc: Number(stoc),
+        disponibila: Number(stoc) > 0,
       });
       setDenumire("");
       setStare("noua");
       setDescriere("");
+      setPret(PRET_IMPLICIT);
+      setStoc(STOC_IMPLICIT);
     } catch (err) {
       setEroare(err.message);
     } finally {
@@ -55,7 +68,7 @@ export default function PiesaForm({ onAdd }) {
 
   return (
     <form
-      className={styles.form} // MODIFICAT (era "item-form")
+      className={styles.form}
       onSubmit={handleSubmit}
       noValidate
       data-testid="form"
@@ -89,6 +102,30 @@ export default function PiesaForm({ onAdd }) {
       </label>
 
       <label>
+        Preț (RON)
+        <input
+          type="number"
+          min="0"
+          step="0.01"
+          value={pret}
+          onChange={(e) => setPret(e.target.value)}
+          data-testid="form-pret"
+        />
+      </label>
+
+      <label>
+        Stoc (bucăți)
+        <input
+          type="number"
+          min="0"
+          step="1"
+          value={stoc}
+          onChange={(e) => setStoc(e.target.value)}
+          data-testid="form-stoc"
+        />
+      </label>
+
+      <label>
         Descriere
         <textarea
           rows={4}
@@ -107,7 +144,7 @@ export default function PiesaForm({ onAdd }) {
 
       <button
         type="submit"
-        className={styles.submit} // NOU
+        className={styles.submit}
         disabled={trimite}
         data-testid="form-submit"
       >

@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ETICHETE_STARE } from "../constants.js";
+import { formatPret } from "../format.js";
 import styles from "./PiesaCard.module.css";
 
-export default function PiesaCard({ piesa, onToggle, onDelete }) {
+export default function PiesaCard({ piesa, onToggle, onDelete, onBuy }) {
   const [deschis, setDeschis] = useState(false);
+  const stoc = piesa.stoc ?? 0;
+  const poateCumpara = stoc > 0 && Number(piesa.pret) > 0;
 
   return (
     <li
@@ -45,6 +48,16 @@ export default function PiesaCard({ piesa, onToggle, onDelete }) {
         </div>
       </div>
 
+      <div className={styles.pret}>
+        <strong>{formatPret(piesa.pret)}</strong>
+        <span
+          className={stoc > 0 ? styles.stoc : styles.stocEpuizat}
+          data-testid="item-stoc"
+        >
+          {stoc > 0 ? `Stoc: ${stoc} buc.` : "Stoc epuizat"}
+        </span>
+      </div>
+
       <div className={styles.actions}>
         <span className={styles.status}>
           {piesa.disponibila ? "Disponibilă" : "Indisponibilă"}
@@ -67,6 +80,16 @@ export default function PiesaCard({ piesa, onToggle, onDelete }) {
           Șterge
         </button>
       </div>
+
+      <button
+        type="button"
+        className={styles.cumpara}
+        onClick={() => onBuy(piesa)}
+        disabled={!poateCumpara}
+        data-testid="item-buy"
+      >
+        Cumpără
+      </button>
 
       {deschis && <div className={styles.descriere}>{piesa.descriere}</div>}
     </li>

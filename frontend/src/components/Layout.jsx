@@ -33,8 +33,7 @@ export default function Layout() {
         </button>
         <h1>Magazin de Piese Auto</h1>
         <p>
-          Acest site WEB are scopul de a oferi utilizatorilor o platformă
-          pentru căutarea și cumpărarea de piese auto.
+          Catalog complet de piese auto cu stoc actualizat, comandă rapidă și facturare instantă.
         </p>
         <nav className={styles.nav} data-testid="nav">
           <NavLink to="/" end className={navClass}>

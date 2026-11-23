@@ -1,4 +1,17 @@
-.detail { max-width: 600px; }
+.detail {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+:global([data-theme="dark"]) .detail {
+  background: #242731;
+  border-color: #3a4052;
+  color: #f3f4f6;
+}
+
+:global([data-theme="dark"]) .back {
+  color: #93c5fd;
+}
 
 .back {
   display: inline-block;
