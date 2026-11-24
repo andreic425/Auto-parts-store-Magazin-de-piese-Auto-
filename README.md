@@ -40,7 +40,9 @@ Open `index.html` in a browser. No build step, no server.
 - [x] Stage 6: loading data from a mock API
 - [x] Stage 7: form and validation
 - [x] Stage 8: routing and detail page
-- [ ] Stage 9: own backend with Express
+- [x] Stage 8: routing and detail page
+- [x] Stage 9: own backend with Express
+- [ ] Stage 10: MariaDB and full CRUD
 
 ## Stage 1 verification table
 
@@ -214,3 +216,45 @@ Modules, next to each component.
 | S8-R6 | data-testid attributes from tables 7.3 and 8.2; detail route /piese/:id | [tw.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-8/tw.json), [Layout.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/9db608f00b11f1d962321f7b349d7c7229afe979/frontend/src/components/Layout.jsx#L39-L46), [PiesaCard.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/9db608f00b11f1d962321f7b349d7c7229afe979/frontend/src/components/PiesaCard.jsx#L10-L72), [PiesaDetaliuPage.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-8/frontend/src/pages/PiesaDetaliuPage.jsx), [NotFoundPage.jsx](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-8/frontend/src/pages/NotFoundPage.jsx) | querySelector in the console |
 | S8-R7 | README Stage 8 section + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-8/README.md), [etapa-08.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-8/ai-log/etapa-08.md) | read |
 | S8-R8 | commit "Stage 8" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-8/) | commit history |
+
+
+## Stage 9: own backend
+
+`json-server` is gone. The API is an Express server in `backend/`, with REST routes (`/piese` and `/health`), server-side validation, error handling, and CORS. Data is kept in memory and resets on server restart.
+
+## How to run
+
+```bash
+# Terminal 1 (port 3001)
+cd backend && npm install && npm run dev
+
+# Terminal 2 (port 5173)
+cd frontend && npm install && npm run dev
+```
+
+### API test commands (`curl`)
+
+```bash
+curl -s -w '\n%{http_code}\n' http://localhost:3001/piese
+curl -s -w '\n%{http_code}\n' -X POST http://localhost:3001/piese \
+  -H "Content-Type: application/json" \
+  -d '{"denumire":"Bujie iridium","stoc":4,"stare":"noua","pret":55}'
+curl -s -w '\n%{http_code}\n' -X POST http://localhost:3001/piese \
+  -H "Content-Type: application/json" \
+  -d '{"denumire":""}'
+curl -s -w '\n%{http_code}\n' http://localhost:3001/piese/999
+curl -s -w '\n%{http_code}\n' -X DELETE http://localhost:3001/piese/6
+```
+
+
+## Stage 9: checklist
+
+| ID | Requirement | Where (permalink) | How to check |
+|---|---|---|---|
+| S9-R1 | `npm run dev` in `backend/` starts the API on `3001` | [package.json](), [server.js]() | run `npm run dev` in `backend/`, open `/health` |
+| S9-R2 | all five routes answer with the right codes | [piese.js]() | run `curl` commands from README |
+| S9-R3 | invalid data returns `400` with a clear message | [validation.js]() | `POST /piese` with empty `denumire` |
+| S9-R4 | React app works with `json-server` removed | [package.json](), [api.js]() | stop everything except `backend/`, run `frontend/` on `5173` |
+| S9-R5 | no CORS errors in the browser console | [app.js]() | open `http://localhost:5173`, check Console |
+| S9-R6 | README Stage 9 section + AI log | [README.md](), [etapa-09.md]() | read |
+| S9-R7 | commit "Stage 9" pushed | [commit]() | commit history |
