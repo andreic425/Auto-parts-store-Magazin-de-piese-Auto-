@@ -251,10 +251,10 @@ curl -s -w '\n%{http_code}\n' -X DELETE http://localhost:3001/piese/6
 
 | ID | Requirement | Where (permalink) | How to check |
 |---|---|---|---|
-| S9-R1 | `npm run dev` in `backend/` starts the API on `3001` | [package.json](), [server.js]() | run `npm run dev` in `backend/`, open `/health` |
-| S9-R2 | all five routes answer with the right codes | [piese.js]() | run `curl` commands from README |
-| S9-R3 | invalid data returns `400` with a clear message | [validation.js]() | `POST /piese` with empty `denumire` |
-| S9-R4 | React app works with `json-server` removed | [package.json](), [api.js]() | stop everything except `backend/`, run `frontend/` on `5173` |
-| S9-R5 | no CORS errors in the browser console | [app.js]() | open `http://localhost:5173`, check Console |
-| S9-R6 | README Stage 9 section + AI log | [README.md](), [etapa-09.md]() | read |
-| S9-R7 | commit "Stage 9" pushed | [commit]() | commit history |
+| S9-R1 | `npm run dev` in `backend/` starts the API on `3001` | [package.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/a1479c3cb45ab0a7052a5beb6d71c0976e50ccbd/backend/package.json#L7-L10), [server.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-9/backend/src/server.js) | run `npm run dev` in `backend/`, open `/health` |
+| S9-R2 | all five routes answer with the right codes | [piese.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/a1479c3cb45ab0a7052a5beb6d71c0976e50ccbd/backend/src/routes/piese.js#L66-L117) | run `curl` commands from README |
+| S9-R3 | invalid data returns `400` with a clear message | [validation.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/a1479c3cb45ab0a7052a5beb6d71c0976e50ccbd/backend/src/validation.js#L4-L76) | `POST /piese` with empty `denumire` |
+| S9-R4 | React app works with `json-server` removed | [package.json](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/a1479c3cb45ab0a7052a5beb6d71c0976e50ccbd/frontend/package.json#L6-L15), [api.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/a1479c3cb45ab0a7052a5beb6d71c0976e50ccbd/frontend/src/api.js#L1-L13) | stop everything except `backend/`, run `frontend/` on `5173` |
+| S9-R5 | no CORS errors in the browser console | [app.js](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/a1479c3cb45ab0a7052a5beb6d71c0976e50ccbd/backend/src/app.js#L7-L11) | open `http://localhost:5173`, check Console |
+| S9-R6 | README Stage 9 section + AI log | [README.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-9/README.md), [etapa-09.md](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/blob/stage-9/ai-log/etapa-09.md) | read |
+| S9-R7 | commit "Stage 9" pushed | [commit](https://github.com/andreic425/Auto-parts-store-Magazin-de-piese-Auto-/commits/stage-9) | commit history |
